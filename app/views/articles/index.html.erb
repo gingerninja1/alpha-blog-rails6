@@ -1,7 +1,7 @@
 
 <h1>Articles listing page</h1>
 
-<table class="table">
+<table class="table table-striped">
     <thead class="thead-dark">
         <tr>
             <th scope="col">Title</th>
@@ -20,4 +20,4 @@
     </tbody>
 </table>
 
-<p><%= link_to 'Create new article', new_article_path %></p>
+<p><%= link_to 'Create new article', new_article_path, {class: 'btn btn-primary'} %></p>
