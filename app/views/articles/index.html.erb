@@ -1,20 +1,23 @@
+
 <h1>Articles listing page</h1>
 
-<table>
-    <thead>
+<table class="table">
+    <thead class="thead-dark">
         <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Actions</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Actions</th>
         </tr>
     </thead>
     <tbody>
         <% @articles.each do |article| %>
         <tr>
-            <td><%= article.title %></td>
+            <th scope="row"><a href="<%= article_path(article) %>"><%= article.title %></a></td>
             <td><%= article.description %></td>
-            <td>Placeholder</td>
+            <td><a href="<%= edit_article_path(article) %>">Edit</a> | <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
         <% end %>
     </tbody>
 </table>
+
+<p><%= link_to 'Create new article', new_article_path %></p>
